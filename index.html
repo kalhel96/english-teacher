@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinguaBoost – English Mastery for Amharic Speakers</title>
+  <meta name="description" content="Master English with 800+ vocabulary, 800 idioms & phrasal verbs, all 12 tenses explained in English & Amharic, pronunciation guide, and conversation practice." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-orbs">
+    <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  </div>
+
+  <div class="app-shell">
+    <!-- ── SIDEBAR ── -->
+    <nav class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">🌟</div>
+        <div><div class="brand-name">LinguaBoost</div><div class="brand-sub">English Mastery</div></div>
+      </div>
+      <div class="level-pill">Beginner → Advanced</div>
+      <ul class="nav-list" id="nav-list">
+        <li><button class="nav-btn active" data-page="dashboard">  <span>🏠</span> Dashboard</button></li>
+        <li><button class="nav-btn" data-page="vocabulary">        <span>📖</span> Vocabulary</button></li>
+        <li><button class="nav-btn" data-page="idioms">            <span>💬</span> Idioms & Expressions</button></li>
+        <li><button class="nav-btn" data-page="grammar">           <span>📐</span> Grammar & Tenses</button></li>
+        <li><button class="nav-btn" data-page="pronunciation">     <span>🎙️</span> Pronunciation</button></li>
+        <li><button class="nav-btn" data-page="mistakes">          <span>⚠️</span> Common Mistakes</button></li>
+        <li><button class="nav-btn" data-page="conversations">     <span>🗣️</span> Conversations</button></li>
+        <li><button class="nav-btn" data-page="sentences">         <span>💡</span> Common Sentences</button></li>
+        <li><button class="nav-btn" data-page="writing">           <span>✍️</span> Writing Lab</button></li>
+        <li><button class="nav-btn" data-page="progress">          <span>📊</span> My Progress</button></li>
+      </ul>
+      <div class="sb-streak">
+        <span class="streak-flame">🔥</span>
+        <div><div class="streak-val" id="sb-streak">0</div><div class="streak-lbl">Day Streak</div></div>
+      </div>
+    </nav>
+
+    <!-- ── MOBILE HEADER ── -->
+    <header class="mob-head">
+      <button class="ham" id="ham-btn">☰</button>
+      <span class="mob-brand">🌟 LinguaBoost</span>
+      <span class="mob-stk">🔥 <span id="mob-streak">0</span></span>
+    </header>
+
+    <!-- ── MAIN CONTENT ── -->
+    <main class="main" id="main">
+
+      <!-- ████ DASHBOARD ████ -->
+      <section class="page active" id="page-dashboard">
+        <div class="ph">
+          <div><h1 class="pt" id="dash-greeting">Good Morning! 👋</h1><p class="ps" id="dash-date">Loading…</p></div>
+          <div class="xp-badge"><span class="xp-icon">⚡</span><span id="dash-xp">0 XP</span></div>
+        </div>
+        <!-- Word of the Day -->
+        <div class="wod-card">
+          <div class="wod-header"><span class="wod-tag">📖 Word of the Day</span><span class="wod-level" id="wod-level">Advanced</span></div>
+          <div class="wod-word" id="wod-word">Loading…</div>
+          <div class="wod-pos" id="wod-pos">verb</div>
+          <div class="wod-def" id="wod-def">Loading definition…</div>
+          <div class="wod-am"><span class="am-flag">🇪🇹</span><span id="wod-am">Loading…</span></div>
+          <div class="wod-ex" id="wod-ex">Example sentence loading…</div>
+          <button class="btn-next-wod" id="btn-next-wod">Next Word →</button>
+        </div>
+        <!-- Quick Stats -->
+        <div class="qs-grid">
+          <div class="qs-card"><div class="qs-icon">📖</div><div class="qs-val" id="qs-vocab">800</div><div class="qs-lbl">Vocabulary Words</div></div>
+          <div class="qs-card"><div class="qs-icon">💬</div><div class="qs-val" id="qs-idioms">800</div><div class="qs-lbl">Idioms & Phrasal</div></div>
+          <div class="qs-card"><div class="qs-icon">📐</div><div class="qs-val" id="qs-tenses">12</div><div class="qs-lbl">Tenses Covered</div></div>
+          <div class="qs-card"><div class="qs-icon">✍️</div><div class="qs-val" id="qs-writings">0</div><div class="qs-lbl">Essays Written</div></div>
+        </div>
+        <!-- Today's Writing Prompt Preview -->
+        <div class="section-title">Today's Writing Challenge</div>
+        <div class="prompt-preview">
+          <div class="pp-label">✍️ Daily Prompt</div>
+          <div class="pp-text" id="dash-prompt">Loading…</div>
+          <button class="btn-go-write" onclick="navigateTo('writing')">Start Writing →</button>
+        </div>
+        <!-- Daily Tip -->
+        <div class="section-title" style="margin-top:28px">💡 Study Tip of the Day</div>
+        <div class="tip-of-day" id="tip-of-day">Loading…</div>
+      </section>
+
+      <!-- ████ VOCABULARY ████ -->
+      <section class="page" id="page-vocabulary">
+        <div class="ph">
+          <div><h1 class="pt">Vocabulary</h1><p class="ps">800 words with Amharic meanings & examples</p></div>
+          <div class="view-toggle">
+            <button class="vt-btn active" id="vt-cards" onclick="setVocabView('cards')">🃏 Cards</button>
+            <button class="vt-btn" id="vt-list" onclick="setVocabView('list')">📋 List</button>
+            <button class="vt-btn" id="vt-quiz" onclick="startVocabQuiz()">🎯 Quiz</button>
+          </div>
+        </div>
+        <div class="search-filter-bar">
+          <input type="text" class="search-inp" id="vocab-search" placeholder="🔍 Search words…" oninput="filterVocab()" />
+          <div class="filter-tabs" id="vocab-filters">
+            <button class="ftab active" data-filter="all" onclick="setVocabFilter('all',this)">All</button>
+            <button class="ftab" data-filter="beginner" onclick="setVocabFilter('beginner',this)">Beginner</button>
+            <button class="ftab" data-filter="intermediate" onclick="setVocabFilter('intermediate',this)">Intermediate</button>
+            <button class="ftab" data-filter="advanced" onclick="setVocabFilter('advanced',this)">Advanced</button>
+            <button class="ftab" data-filter="bookmarked" onclick="setVocabFilter('bookmarked',this)">⭐ Saved</button>
+          </div>
+        </div>
+        <div id="vocab-count" class="result-count"></div>
+        <div id="vocab-container" class="cards-grid"></div>
+        <!-- Quiz Mode -->
+        <div id="quiz-container" class="quiz-area" style="display:none"></div>
+      </section>
+
+      <!-- ████ IDIOMS & EXPRESSIONS ████ -->
+      <section class="page" id="page-idioms">
+        <div class="ph">
+          <div><h1 class="pt">Idioms & Expressions</h1><p class="ps">800 idioms & phrasal verbs with Amharic meanings</p></div>
+        </div>
+        <div class="search-filter-bar">
+          <input type="text" class="search-inp" id="idiom-search" placeholder="🔍 Search idioms & phrasal verbs…" oninput="filterIdioms()" />
+          <div class="filter-tabs" id="idiom-filters">
+            <button class="ftab active" onclick="setIdiomFilter('all',this)">All</button>
+            <button class="ftab" onclick="setIdiomFilter('phrasal',this)">🔗 Phrasal Verbs</button>
+            <button class="ftab" onclick="setIdiomFilter('idiom',this)">💎 Idioms</button>
+            <button class="ftab" onclick="setIdiomCatFilter('daily',this)">☀️ Daily</button>
+            <button class="ftab" onclick="setIdiomCatFilter('work',this)">💼 Work</button>
+            <button class="ftab" onclick="setIdiomCatFilter('emotions',this)">❤️ Emotions</button>
+            <button class="ftab" onclick="setIdiomCatFilter('social',this)">🤝 Social</button>
+          </div>
+        </div>
+        <div id="idiom-count" class="result-count"></div>
+        <div id="idiom-container" class="idiom-grid"></div>
+      </section>
+
+      <!-- ████ GRAMMAR & TENSES ████ -->
+      <section class="page" id="page-grammar">
+        <div class="ph">
+          <div><h1 class="pt">Grammar & Tenses</h1><p class="ps">All 12 tenses & grammar rules — bilingual English + Amharic</p></div>
+        </div>
+        <div class="grammar-nav" id="grammar-nav"></div>
+        <div id="grammar-container"></div>
+      </section>
+
+      <!-- ████ PRONUNCIATION ████ -->
+      <section class="page" id="page-pronunciation">
+        <div class="ph">
+          <div><h1 class="pt">Pronunciation Guide 🎙️</h1><p class="ps">Master difficult sounds, stress, and intonation</p></div>
+        </div>
+        <div class="search-filter-bar">
+          <input type="text" class="search-inp" id="pron-search" placeholder="🔍 Search pronunciation topics…" oninput="filterPronunciation()" />
+          <div class="filter-tabs" id="pron-filters">
+            <button class="ftab active" onclick="setPronFilter('all',this)">All</button>
+            <button class="ftab" onclick="setPronFilter('hard',this)">🔴 Hard</button>
+            <button class="ftab" onclick="setPronFilter('medium',this)">🟡 Medium</button>
+            <button class="ftab" onclick="setPronFilter('easy',this)">🟢 Easy</button>
+          </div>
+        </div>
+        <div id="pron-container"></div>
+      </section>
+
+      <!-- ████ COMMON MISTAKES ████ -->
+      <section class="page" id="page-mistakes">
+        <div class="ph">
+          <div><h1 class="pt">Common Mistakes ⚠️</h1><p class="ps">Errors Amharic speakers make & how to fix them</p></div>
+        </div>
+        <div class="search-filter-bar">
+          <input type="text" class="search-inp" id="mistake-search" placeholder="🔍 Search mistakes…" oninput="filterMistakes()" />
+          <div class="filter-tabs" id="mistake-filters">
+            <button class="ftab active" onclick="setMistakeFilter('all',this)">All</button>
+            <button class="ftab" onclick="setMistakeFilter('grammar',this)">📐 Grammar</button>
+            <button class="ftab" onclick="setMistakeFilter('vocabulary',this)">📖 Vocabulary</button>
+            <button class="ftab" onclick="setMistakeFilter('pronunciation',this)">🎙️ Pronunciation</button>
+            <button class="ftab" onclick="setMistakeFilter('cultural',this)">🌍 Cultural</button>
+          </div>
+        </div>
+        <div id="mistake-container"></div>
+      </section>
+
+      <!-- ████ CONVERSATIONS ████ -->
+      <section class="page" id="page-conversations">
+        <div class="ph">
+          <div><h1 class="pt">Conversation Practice 🗣️</h1><p class="ps">Real-world dialogues with Amharic translations</p></div>
+        </div>
+        <div class="search-filter-bar">
+          <div class="filter-tabs" id="conv-filters">
+            <button class="ftab active" onclick="setConvFilter('all',this)">All</button>
+            <button class="ftab" onclick="setConvFilter('daily',this)">☀️ Daily</button>
+            <button class="ftab" onclick="setConvFilter('work',this)">💼 Work</button>
+            <button class="ftab" onclick="setConvFilter('academic',this)">🎓 Academic</button>
+            <button class="ftab" onclick="setConvFilter('health',this)">🏥 Health</button>
+            <button class="ftab" onclick="setConvFilter('travel',this)">✈️ Travel</button>
+            <button class="ftab" onclick="setConvFilter('social',this)">🤝 Social</button>
+          </div>
+        </div>
+        <div id="conv-container"></div>
+      </section>
+
+      <!-- ████ SENTENCES ████ -->
+      <section class="page" id="page-sentences">
+        <div class="ph">
+          <div><h1 class="pt">Common Sentences</h1><p class="ps">Essential phrases grouped by topic for real-world fluency</p></div>
+        </div>
+        <div class="sent-categories" id="sent-cats"></div>
+        <div id="sent-container"></div>
+      </section>
+
+      <!-- ████ WRITING LAB ████ -->
+      <section class="page" id="page-writing">
+        <div class="ph">
+          <div><h1 class="pt">Writing Lab ✍️</h1><p class="ps">Daily prompts — write, submit, get graded & reflect</p></div>
+          <div class="prompt-day-badge">Prompt #<span id="prompt-num">1</span></div>
+        </div>
+        <!-- Prompt -->
+        <div class="writing-prompt-card">
+          <div class="wpc-header">
+            <span class="wpc-label">📝 Today's Prompt</span>
+            <span class="wpc-level" id="wp-level">Intermediate</span>
+          </div>
+          <div class="wpc-text" id="writing-prompt-text">Loading…</div>
+          <div class="wpc-tips" id="wpc-tips"></div>
+        </div>
+        <!-- Editor -->
+        <div class="editor-wrap" id="editor-wrap">
+          <div class="editor-toolbar">
+            <span class="editor-label">Your Response:</span>
+            <span class="wc-counter"><span id="wc-num">0</span> words</span>
+          </div>
+          <textarea class="editor" id="writing-editor" placeholder="Start writing your response here… Aim for 150–300 words for the best score. Use complex sentences, connectors (however, furthermore, although), and vocabulary from your word lists!" oninput="updateWordCount()"></textarea>
+          <div class="editor-actions">
+            <button class="btn-clear-write" onclick="clearEditor()">🗑 Clear</button>
+            <button class="btn-submit-write" id="btn-submit" onclick="submitWriting()">📤 Submit & Grade</button>
+          </div>
+        </div>
+        <!-- Grade Result -->
+        <div class="grade-result" id="grade-result" style="display:none">
+          <div class="grade-header">
+            <div class="grade-letter" id="grade-letter">A</div>
+            <div>
+              <div class="grade-score" id="grade-score">0/100</div>
+              <div class="grade-title" id="grade-title">Excellent!</div>
+            </div>
+          </div>
+          <div class="grade-breakdown" id="grade-breakdown"></div>
+          <div class="grade-reflection" id="grade-reflection"></div>
+          <div class="grade-suggestions" id="grade-suggestions"></div>
+          <button class="btn-write-again" onclick="writeAgain()">✍️ Write Another</button>
+        </div>
+        <!-- History -->
+        <div class="section-title" style="margin-top:32px">📚 Your Writing History</div>
+        <div id="writing-history"></div>
+      </section>
+
+      <!-- ████ PROGRESS ████ -->
+      <section class="page" id="page-progress">
+        <div class="ph"><h1 class="pt">My Progress 📊</h1><p class="ps">Track your English mastery journey</p></div>
+        <div class="prog-stats">
+          <div class="ps-card fire"><div class="ps-ico">🔥</div><div class="ps-val" id="prog-streak">0</div><div class="ps-lbl">Current Streak</div></div>
+          <div class="ps-card gold"><div class="ps-ico">🏆</div><div class="ps-val" id="prog-best">0</div><div class="ps-lbl">Best Streak</div></div>
+          <div class="ps-card blue"><div class="ps-ico">⚡</div><div class="ps-val" id="prog-xp">0</div><div class="ps-lbl">Total XP</div></div>
+          <div class="ps-card purple"><div class="ps-ico">✍️</div><div class="ps-val" id="prog-essays">0</div><div class="ps-lbl">Essays Written</div></div>
+          <div class="ps-card teal"><div class="ps-ico">📖</div><div class="ps-val" id="prog-vocab">0</div><div class="ps-lbl">Words Learned</div></div>
+          <div class="ps-card rose"><div class="ps-ico">🎯</div><div class="ps-val" id="prog-avg">0%</div><div class="ps-lbl">Avg Writing Score</div></div>
+        </div>
+        <div class="section-title">XP Level Progress</div>
+        <div class="xp-bar-wrap">
+          <div class="xp-bar-track"><div class="xp-bar-fill" id="xp-bar-fill"></div></div>
+          <div class="xp-bar-labels"><span id="xp-level-label">Level 1</span><span id="xp-to-next">0 XP to next level</span></div>
+        </div>
+        <div class="section-title" style="margin-top:28px">30-Day Activity</div>
+        <div class="activity-cal" id="activity-cal"></div>
+        <div class="section-title" style="margin-top:28px">🏅 Achievements</div>
+        <div class="achievements" id="achievements"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ── WORD MODAL ── -->
+  <div class="modal-bg" id="word-modal-bg">
+    <div class="word-modal" id="word-modal">
+      <button class="modal-x" onclick="closeWordModal()">✕</button>
+      <div class="wm-top">
+        <div>
+          <div class="wm-word" id="wm-word"></div>
+          <div class="wm-meta">
+            <span class="wm-pos" id="wm-pos"></span>
+            <span class="wm-lvl" id="wm-lvl"></span>
+          </div>
+        </div>
+        <button class="bm-btn" id="wm-bm-btn" onclick="toggleBookmark()">☆ Save</button>
+      </div>
+      <div class="wm-def" id="wm-def"></div>
+      <div class="wm-am-row"><span>🇪🇹 Amharic:</span><span class="wm-am" id="wm-am"></span></div>
+      <div class="wm-ex-label">Example Sentences:</div>
+      <div class="wm-ex" id="wm-ex"></div>
+      <div class="wm-ex" id="wm-ex2" style="margin-top:8px"></div>
+    </div>
+  </div>
+
+  <!-- Data files -->
+  <script src="data/vocab_800.js"></script>
+  <script src="data/idioms_800.js"></script>
+  <script src="data/tenses.js"></script>
+  <script src="data/extras.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
