@@ -9,6 +9,14 @@ let state = {
   vocabFilter: 'all',
   vocabSearch: '',
   vocabView: 'cards',
+  idiomFilter: 'all',
+  idiomCategoryFilter: 'all',
+  idiomSearch: '',
+  pronFilter: 'all',
+  pronSearch: '',
+  mistakeFilter: 'all',
+  mistakeSearch: '',
+  convFilter: 'all',
   slangFilter: 'all',
   slangSearch: '',
   phrasalFilter: 'all',
@@ -166,7 +174,8 @@ function renderDashboard() {
   setEl('dash-greeting', greeting());
   setEl('dash-date', formatDate(new Date()));
   setEl('qs-vocab', VOCAB.length + '+');
-  setEl('qs-slang', SLANG.length + '+');
+  setEl('qs-idioms', IDIOMS_PHRASAL.length + '+');
+  setEl('qs-tenses', GRAMMAR.filter(item => item.badge === 'Tense').length);
   setEl('qs-writings', state.writingHistory.length);
   const best = state.writingHistory.length
     ? Math.max(...state.writingHistory.map(w => w.score)) + '%'
@@ -449,7 +458,71 @@ document.getElementById('word-modal-bg').addEventListener('click', function(e) {
 });
 
 /* ════════════════════════════════════════════════════
-   SLANG
+   IDIOMS & PHRASAL EXPRESSIONS
+════════════════════════════════════════════════════ */
+function setIdiomFilter(filter, btn) {
+  state.idiomFilter = filter;
+  document.querySelectorAll('#idiom-filters .ftab').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderIdioms();
+}
+
+function setIdiomCatFilter(filter, btn) {
+  state.idiomCategoryFilter = filter;
+  document.querySelectorAll('#idiom-filters .ftab').forEach(b => {
+    if (!b.textContent.includes('All') && !b.textContent.includes('Phrasal') && !b.textContent.includes('Idioms')) {
+      b.classList.remove('active');
+    }
+  });
+  if (btn) btn.classList.add('active');
+  renderIdioms();
+}
+
+function filterIdioms() {
+  const input = document.getElementById('idiom-search');
+  state.idiomSearch = input ? input.value.toLowerCase() : '';
+  renderIdioms();
+}
+
+function renderIdioms() {
+  const container = document.getElementById('idiom-container');
+  if (!container) return;
+
+  let items = IDIOMS_PHRASAL.filter(item => {
+    if (state.idiomFilter !== 'all' && item.type !== state.idiomFilter) return false;
+    if (state.idiomCategoryFilter !== 'all' && item.category !== state.idiomCategoryFilter) return false;
+    if (state.idiomSearch) {
+      const q = state.idiomSearch;
+      return item.expression.toLowerCase().includes(q) ||
+             item.meaning.toLowerCase().includes(q) ||
+             item.amharic.toLowerCase().includes(q) ||
+             item.example.toLowerCase().includes(q) ||
+             item.example2.toLowerCase().includes(q);
+    }
+    return true;
+  });
+
+  setEl('idiom-count', `${items.length} expression${items.length !== 1 ? 's' : ''} found`);
+  container.innerHTML = items.map(buildIdiomCard).join('');
+}
+
+function buildIdiomCard(item) {
+  const typeLabel = item.type === 'phrasal' ? '🔗 Phrasal Verb' : '💎 Idiom';
+  return `
+    <div class="idiom-card">
+      <div class="id-top">
+        <div class="id-expression">${item.expression}</div>
+        <span class="id-type">${typeLabel}</span>
+      </div>
+      <div class="id-meaning">${item.meaning}</div>
+      <div class="id-am">🇪🇹 ${item.amharic}</div>
+      <div class="id-ex">"${item.example}"</div>
+      <div class="id-ex">"${item.example2}"</div>
+    </div>`;
+}
+
+/* ════════════════════════════════════════════════════
+   LEGACY SLANG
 ════════════════════════════════════════════════════ */
 function setSlangFilter(filter, btn) {
   state.slangFilter = filter;
@@ -687,6 +760,124 @@ function renderSentenceItems() {
         ${items}
       </div>`;
   }).join('');
+}
+
+/* ════════════════════════════════════════════════════
+   PRONUNCIATION
+════════════════════════════════════════════════════ */
+function setPronFilter(filter, btn) {
+  state.pronFilter = filter;
+  document.querySelectorAll('#pron-filters .ftab').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderPronunciation();
+}
+
+function filterPronunciation() {
+  const input = document.getElementById('pron-search');
+  state.pronSearch = input ? input.value.toLowerCase() : '';
+  renderPronunciation();
+}
+
+function renderPronunciation() {
+  const container = document.getElementById('pron-container');
+  if (!container) return;
+
+  const items = PRONUNCIATION.filter(item => {
+    if (state.pronFilter !== 'all' && item.difficulty !== state.pronFilter) return false;
+    if (state.pronSearch) {
+      const q = state.pronSearch;
+      return item.title.toLowerCase().includes(q) ||
+             item.description.toLowerCase().includes(q) ||
+             item.descriptionAm.toLowerCase().includes(q);
+    }
+    return true;
+  });
+
+  container.innerHTML = items.map(item => `
+    <div class="pron-card">
+      <div class="pron-title-row">
+        <div class="pron-title">${item.title}</div>
+        <span class="pron-level">${item.difficulty}</span>
+      </div>
+      <div class="pron-desc">${item.description}</div>
+      <div class="pron-am">🇪🇹 ${item.descriptionAm}</div>
+      <div class="pron-tip">💡 ${item.tip}</div>
+      <div class="pron-examples">${item.examples.map(ex => `<span class="pron-chip">${ex}</span>`).join('')}</div>
+    </div>`).join('');
+}
+
+/* ════════════════════════════════════════════════════
+   COMMON MISTAKES
+════════════════════════════════════════════════════ */
+function setMistakeFilter(filter, btn) {
+  state.mistakeFilter = filter;
+  document.querySelectorAll('#mistake-filters .ftab').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderMistakes();
+}
+
+function filterMistakes() {
+  const input = document.getElementById('mistake-search');
+  state.mistakeSearch = input ? input.value.toLowerCase() : '';
+  renderMistakes();
+}
+
+function renderMistakes() {
+  const container = document.getElementById('mistake-container');
+  if (!container) return;
+
+  const items = COMMON_MISTAKES.filter(item => {
+    if (state.mistakeFilter !== 'all' && item.category !== state.mistakeFilter) return false;
+    if (state.mistakeSearch) {
+      const q = state.mistakeSearch;
+      return item.title.toLowerCase().includes(q) ||
+             item.wrong.toLowerCase().includes(q) ||
+             item.correct.toLowerCase().includes(q) ||
+             item.explanation.toLowerCase().includes(q);
+    }
+    return true;
+  });
+
+  container.innerHTML = items.map(item => `
+    <div class="mist-card">
+      <div class="mist-title">${item.title}</div>
+      <div class="mist-wrong">❌ ${item.wrong}</div>
+      <div class="mist-correct">✅ ${item.correct}</div>
+      <div class="mist-exp">${item.explanation}</div>
+      <div class="mist-am">🇪🇹 ${item.explanationAm}</div>
+    </div>`).join('');
+}
+
+/* ════════════════════════════════════════════════════
+   CONVERSATIONS
+════════════════════════════════════════════════════ */
+function setConvFilter(filter, btn) {
+  state.convFilter = filter;
+  document.querySelectorAll('#conv-filters .ftab').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderConversations();
+}
+
+function renderConversations() {
+  const container = document.getElementById('conv-container');
+  if (!container) return;
+
+  const items = CONVERSATIONS.filter(item => state.convFilter === 'all' || item.category === state.convFilter);
+  container.innerHTML = items.map(item => `
+    <div class="conv-card">
+      <div class="conv-title-row">
+        <div class="conv-title">${item.title}</div>
+        <span class="conv-level">${item.level}</span>
+      </div>
+      <div class="conv-desc">${item.description}</div>
+      <div class="conv-lines">
+        ${(item.dialogue || []).map(line => `
+          <div class="conv-line">
+            <strong>${line.speaker}:</strong> ${line.text}
+            <div class="conv-am">🇪🇹 ${line.textAm}</div>
+          </div>`).join('')}
+      </div>
+    </div>`).join('');
 }
 
 /* ════════════════════════════════════════════════════
@@ -996,9 +1187,11 @@ function init() {
   updateXPDisplay();
   renderDashboard();
   renderVocab();
-  renderSlang();
+  renderIdioms();
   renderGrammar();
-  renderPhrasal();
+  renderPronunciation();
+  renderMistakes();
+  renderConversations();
   renderSentences();
   renderWritingPage();
   renderProgress();
