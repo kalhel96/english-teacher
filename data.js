@@ -751,7 +751,7 @@ const PHRASAL = [
 const SENTENCES = {
   professional:[
     {en:"I would like to draw your attention to a critical issue that requires immediate and decisive action on your part.",use:"Formal meeting / email",am:"á‹ˆá‹²á‹«á‹ áŠ¥áˆ­áˆáŒƒ áˆˆáˆšáŒ á‹­á‰… áŠ áˆµáˆáˆ‹áŒŠ áŒ‰á‹³á‹­ á‰µáŠ©áˆ¨á‰µá‹ŽáŠ• áŠ¥áŠ•á‹²áˆ°áŒ¡ áˆáˆˆáŠ©á¢"},
-    {en:"Could you please elaborate on what you mean by that? I want to make sure I fully understand your position before responding.",use:"Asking for clarification",am:"áˆáŠ• áˆ›áˆˆá‰µá‹Ž áŠ¥áŠ•á‹°áˆ†áŠ áˆŠá‹«á‰¥áˆ«áˆ©áˆáŠ á‹­á‰½áˆ‰ á‹­áˆ†áŠ•? áˆáˆ‹áˆ½ áŠ¨áˆ˜áˆµáŒ á‰´ á‰ áŠá‰µ áŠ á‰‹áˆá‹ŽáŠ• áˆ™áˆ‰ á‰ áˆ™áˆ‰ áˆˆáˆ˜áˆ¨á‹³á‰µ áŠ¥áˆáˆáŒ‹áˆˆáˆá¢"},
+    {en:"Could you please elaborate on what you mean by that? I want to make sure I fully understand your position before responding.",use:"Asking for clarification",am:"ያንን ሲሉ ምን ማለትዎ እንደሆነ በጥቂቱ ሊያብራሩልኝ ይችላሉ? ምላሽ ከመስጠቴ በፊት አቋምዎን ሙሉ በሙሉ መረዳት እፈልጋለሁ።"},
     {en:"With all due respect, I believe there is a more effective approach we should consider before committing to this direction.",use:"Politely disagreeing",am:"áˆ™áˆ‰ áˆˆáˆ™áˆ‰ áˆ³áˆ‹áŠ¨á‰¥áˆ­á‹Ž áˆ³á‹­áˆ†áŠ•á£ á‹ˆá‹°á‹šáˆ… áŠ á‰…áŒ£áŒ« áŠ¨áˆ˜áˆ„á‹³á‰½áŠ• á‰ áŠá‰µ áˆŠá‰³áˆ°á‰¥á‰ á‰µ á‹¨áˆšáŒˆá‰£ á‹¨á‰°áˆ»áˆˆ áˆ˜áŠ•áŒˆá‹µ áŠ¥áŠ•á‹³áˆˆ áŠ áˆáŠ“áˆˆáˆá¢"},
     {en:"I appreciate the feedback and will take it into careful consideration when revising my approach going forward.",use:"Receiving criticism",am:"áŒá‰¥áˆ¨-áˆáˆ‹áˆ¹áŠ• áŠ á‹°áŠ•á‰ƒáˆˆáˆá¤ á‹ˆá‹°áŠá‰µ áŠ á‰€áˆ«áˆ¨á‰¤áŠ• áˆ³áˆ»áˆ»áˆ á‰ áŒ¥áŠ•á‰ƒá‰„ áŠ¨áŒáˆá‰µ á‹áˆµáŒ¥ áŠ áˆµáŒˆá‰£á‹‹áˆˆáˆá¢"},
     {en:"To summarize the key takeaways from today's discussion, we have agreed on three primary action points.",use:"Concluding a meeting",am:"á‹›áˆ¬ áŠ¨á‰°á‹ˆá‹«á‹¨áŠá‹ á‹‹áŠ“ á‹‹áŠ“ áŠáŒ¥á‰¦á‰½áŠ• áˆˆáˆ›áŒ á‰ƒáˆˆáˆá£ á‰ áˆ¦áˆµá‰µ á‹‹áŠ“ á‹‹áŠ“ á‹¨á‰µáŒá‰ áˆ« áŠáŒ¥á‰¦á‰½ áˆ‹á‹­ á‰°áˆµáˆ›áˆá‰°áŠ“áˆá¢"},
@@ -783,7 +783,17 @@ const SENTENCES = {
     {en:"Can we take a step back and look at the bigger picture? I think we might be getting caught up in minor details.",use:"Refocusing a conversation",am:"á‹ˆá‹° áŠ‹áˆ‹ á‰µáŠ•áˆ½ á‰¥áŠ•áˆ˜áˆˆáˆµáŠ“ á‰µáˆá‰áŠ• áˆáˆµáˆ á‰¥áŠ“á‹­? á‰µáŠ“áŠ•áˆ½ á‹áˆ­á‹áˆ®á‰½ á‹áˆµáŒ¥ á‰°á‹˜áá‰€áŠ• áˆŠáˆ†áŠ• á‹­á‰½áˆ‹áˆ á‰¥á‹¬ áŠ áˆµá‰£áˆˆáˆá¢"},
     {en:"I genuinely appreciate everything you have done â€” your support made an enormous difference at a very difficult time.",use:"Expressing deep gratitude",am:"á‹«á‹°áˆ¨áŒ‹áˆ…/áˆ½ áˆáˆ‰ áŠáŒˆáˆ­ áŠ¥á‹áŠá‰°áŠ› áˆáˆµáŒ‹áŠ“ á‹­á‰€áˆ­á‰¥áˆ…/áˆ½ â€” á‹µáŒ‹ááˆ…/áˆ½ áˆáŒ½áˆž áŠ áˆµá‰¸áŒ‹áˆª á‹ˆá‰…á‰µ áˆ‹á‹­ á‰µáˆá‰… áˆá‹©áŠá‰µ áˆáŒ¥áˆ¯áˆá¢"},
     {en:"I don't have all the answers right now, but I'm committed to figuring this out with you, step by step.",use:"Expressing solidarity",am:"áŠ áˆáŠ• áˆáˆ‰áŠ•áˆ áˆ˜áˆáˆ¶á‰¹ á‹¨áˆˆáŠáˆá¤ áŠáŒˆáˆ­ áŒáŠ• á‹­áˆ…áŠ• áŠ¨áŠ áŠ•á‰± áŒ‹áˆ­ á‹°áˆ¨áŒƒ á‰ á‹°áˆ¨áŒƒ áˆˆáˆ›á‹ˆá‰… á‰áˆ­áŒ áŠ› áŠáŠá¢"},
-    {en:"Could we perhaps find a compromise that respects both of our needs rather than one side winning completely?",use:"Conflict resolution",am:"áŠ áŠ•á‹± áŒŽáŠ• áˆ™áˆ‰ áˆˆáˆ™áˆ‰ áŠ¨áˆšá‹«áˆ¸áŠ•á á‹­áˆá‰… áˆáˆˆá‰³á‰½áŠ•áˆ ááˆ‹áŒŽá‰µ áˆŠá‹«áŠ¨á‰¥áˆ­ á‹¨áˆšá‰½áˆ á‹¨áŒ‹áˆ« áˆ˜áá‰µáˆ” áˆáŠ“áŒˆáŠ áŠ¥áŠ•á‰½áˆ á‹­áˆ†áŠ•?"}
+    {en:"Could we perhaps find a compromise that respects both of our needs rather than one side winning completely?",use:"Conflict resolution",am:"áŠ áŠ•á‹± áŒŽáŠ• áˆ™áˆ‰ áˆˆáˆ™áˆ‰ áŠ¨áˆšá‹«áˆ¸áŠ•á á‹­áˆá‰… áˆáˆˆá‰³á‰½áŠ•áˆ ááˆ‹áŒŽá‰µ áˆŠá‹«áŠ¨á‰¥áˆ­ á‹¨áˆšá‰½áˆ á‹¨áŒ‹áˆ« áˆ˜áá‰µáˆ” áˆáŠ“áŒˆáŠ áŠ¥áŠ•á‰½áˆ á‹­áˆ†áŠ•?"},
+    {en:"How was your day? Did anything interesting happen?",use:"Casual conversation starter",am:"ቀንዎ እንዴት ነበር? የሚገርም ወይም አስደሳች ነገር ተከሰተ?"},
+    {en:"I'm on my way now, so I should be there in about ten minutes.",use:"Updating someone on your arrival",am:"አሁን መንገድ ላይ ነኝ፣ ስለዚህ በአስር ደቂቃ አካባቢ እዚያ እደርሳለሁ።"},
+    {en:"Sorry, I missed your call. Is everything okay?",use:"Returning a missed call",am:"ይቅርታ፣ ጥሪዎን አልመለስኩም። ሁሉም ነገር ደህና ነው?"},
+    {en:"No rush at all. Take your time and let me know when you're ready.",use:"Reassuring someone politely",am:"ፈጣን ነገር የለም። በረጋ መንፈስ ይውሰዱት እና ዝግጁ ሲሆኑ ያሳውቁኝ።"},
+    {en:"That sounds good to me. Let's do it that way.",use:"Agreeing casually",am:"ያ ለእኔ ጥሩ ይመስላል። እስቲ እንደዚያው እናድርገው።"},
+    {en:"I'm a bit tired today, so I might head home early.",use:"Talking about your condition",am:"ዛሬ ትንሽ ደክሞኛል፣ ስለዚህ ቀድሜ ወደ ቤት ልሄድ እችላለሁ።"},
+    {en:"Thanks for checking in. I really appreciate it.",use:"Responding warmly",am:"ስለጠየቁኝ አመሰግናለሁ። በጣም እናደንቃለሁ።"},
+    {en:"If you want, we can talk about it later when things are a little calmer.",use:"Defusing tension",am:"ከፈለጉ ነገሮች ትንሽ ሲረጋጉ በኋላ ስለ ጉዳዩ መነጋገር እንችላለን።"},
+    {en:"I'm just grabbing something quick to eat. Do you want anything?",use:"Everyday offer",am:"በፍጥነት የምበላውን ነገር ልወስድ ነው። ለእርስዎ የምወስደው ነገር አለ?"},
+    {en:"Let's keep in touch. It was really nice seeing you again.",use:"Ending a friendly conversation",am:"በግንኙነት እንቆይ። እንደገና ማየትዎ በጣም ደስ ብሎኛል።"}
   ],
   expressing_ideas:[
     {en:"From my perspective, the fundamental issue is not what people do, but why they do it and what drives their choices.",use:"Sharing a philosophical view",am:"áŠ¨áŠ áˆµá‰°áˆ³áˆ°á‰¤ áŠ áŠ•áŒ»áˆ­á£ áˆ˜áˆ áˆ¨á‰³á‹Š áŒ‰á‹³á‹© áˆ°á‹Žá‰½ áˆáŠ• áŠ¥áŠ•á‹°áˆšá‹«á‹°áˆ­áŒ‰ áˆ³á‹­áˆ†áŠ• áˆˆáˆáŠ• áŠ¥áŠ•á‹°áˆšá‹«á‹°áˆ­áŒ‰á‰µ áŠ¥áŠ“ áˆáˆ­áŒ«á‰¸á‹áŠ• áˆáŠ• áŠ¥áŠ•á‹°áˆšá‹«áˆµáŠáˆ³ áŠá‹á¢"},
@@ -822,6 +832,184 @@ const SENTENCES = {
     {en:"The degree of change required cannot be understated â€” incremental reform will simply not be sufficient to address the scale of the problem.",use:"Emphasizing urgency",am:"á‹¨áˆšáŒ á‰ á‰€á‹ áˆˆá‹áŒ¥ á‹°áˆ¨áŒƒ áŠ áŠ“áˆ³ áˆŠáˆ†áŠ• áŠ á‹­á‰½áˆáˆ â€” á‰€áˆµ á‰€áˆµ á‹¨áˆšáˆ„á‹°á‹ áˆ›áˆ»áˆ»á‹« áˆˆá‰½áŒáˆ© á‹ˆáˆ°áŠ• áˆáˆ‹áˆ½ áˆŠáˆ†áŠ• áŠ á‹­á‰ á‰ƒáˆá¢"}
   ]
 };
+
+// Add 500 practical day-to-day sentences to the everyday category.
+const EVERYDAY_EXTRA_SENTENCES = (() => {
+  const actions = [
+    'send me the address',
+    'share your live location',
+    'call me',
+    'text me',
+    'check your messages',
+    'confirm the time',
+    'confirm the date',
+    'remind me about the meeting',
+    'bring your charger',
+    'bring your ID',
+    'bring an umbrella',
+    'pick up some bread',
+    'pick up milk',
+    'pick up the keys',
+    'drop this package off',
+    'book the appointment',
+    'cancel the reservation',
+    'move the meeting',
+    'check the traffic',
+    'check the weather',
+    'lock the door',
+    'turn off the lights',
+    'turn off the stove',
+    'charge your phone',
+    'update me',
+    'email me the file',
+    'send the invoice',
+    'print the document',
+    'review the note',
+    'save me a seat',
+    'wait for me',
+    'meet me outside',
+    'meet me at the entrance',
+    'open the window',
+    'close the window',
+    'water the plants',
+    'feed the cat',
+    'walk the dog',
+    'take out the trash',
+    'wash the dishes',
+    'check in with mom',
+    'check in with dad',
+    'send me the photo',
+    'share the details',
+    'confirm your arrival',
+    'call the taxi',
+    'top up your card',
+    'buy a bus ticket',
+    'check the train schedule',
+    'double-check the address'
+  ];
+
+  const actionsAm = {
+    'send me the address': 'አድራሻውን ላክልኝ',
+    'share your live location': 'ቀጥታ ሎኬሽንህን አጋራ',
+    'call me': 'ደውልልኝ',
+    'text me': 'መልዕክት ላክልኝ',
+    'check your messages': 'መልዕክቶችህን አረጋግጥ',
+    'confirm the time': 'ሰዓቱን አረጋግጥ',
+    'confirm the date': 'ቀኑን አረጋግጥ',
+    'remind me about the meeting': 'ስለ ስብሰባው አስታውሰኝ',
+    'bring your charger': 'ቻርጀርህን አምጣ',
+    'bring your ID': 'መታወቂያህን አምጣ',
+    'bring an umbrella': 'ጃንጥላ አምጣ',
+    'pick up some bread': 'ዳቦ ግዛ',
+    'pick up milk': 'ወተት ግዛ',
+    'pick up the keys': 'ቁልፎቹን አምጣ',
+    'drop this package off': 'ይህን ፓኬጅ አድርስ',
+    'book the appointment': 'ቀጠሮውን ያዝ',
+    'cancel the reservation': 'ቦታ ማስያዣውን ሰርዝ',
+    'move the meeting': 'ስብሰባውን ቀይር',
+    'check the traffic': 'ትራፊኩን አረጋግጥ',
+    'check the weather': 'የአየር ሁኔታውን አረጋግጥ',
+    'lock the door': 'በሩን ቆልፍ',
+    'turn off the lights': 'መብራቶቹን አጥፋ',
+    'turn off the stove': 'ምድጃውን አጥፋ',
+    'charge your phone': 'ስልክህን ቻርጅ አድርግ',
+    'update me': 'አዲስ መረጃ ስጠኝ',
+    'email me the file': 'ፋይሉን በኢሜይል ላክልኝ',
+    'send the invoice': 'ደረሰኙን ላክ',
+    'print the document': 'ሰነዱን ፕሪንት አድርግ',
+    'review the note': 'ማስታወሻውን ገምግም',
+    'save me a seat': 'ቦታ አስቀምጥልኝ',
+    'wait for me': 'ጠብቀኝ',
+    'meet me outside': 'ውጭ ተገናኝኝ',
+    'meet me at the entrance': 'በመግቢያው ተገናኝኝ',
+    'open the window': 'መስኮቱን ክፈት',
+    'close the window': 'መስኮቱን ዝጋ',
+    'water the plants': 'እፅዋቶቹን ውሃ አጠጣ',
+    'feed the cat': 'ድመቱን መግብ',
+    'walk the dog': 'ውሻውን ለመራመድ ውጣ',
+    'take out the trash': 'ቆሻሻውን አውጣ',
+    'wash the dishes': 'ሳህኖቹን እጠብ',
+    'check in with mom': 'ከእናትህ ጋር ተነጋገር',
+    'check in with dad': 'ከአባትህ ጋር ተነጋገር',
+    'send me the photo': 'ፎቶውን ላክልኝ',
+    'share the details': 'ዝርዝሩን አጋራ',
+    'confirm your arrival': 'መድረስህን አረጋግጥ',
+    'call the taxi': 'ታክሲ ጥራ',
+    'top up your card': 'ካርድህን ሙላ',
+    'buy a bus ticket': 'የአውቶቡስ ትኬት ግዛ',
+    'check the train schedule': 'የባቡር መርሐግብርን አረጋግጥ',
+    'double-check the address': 'አድራሻውን እንደገና አረጋግጥ'
+  };
+
+  const timePhrases = [
+    'when you have a minute',
+    'before you leave',
+    'after work',
+    'on your way home',
+    'if you can',
+    'as soon as possible',
+    'this evening',
+    'tomorrow morning',
+    'when you get a chance',
+    'before noon'
+  ];
+
+  const timePhrasesAm = {
+    'when you have a minute': 'ጥቂት ጊዜ ሲኖርህ',
+    'before you leave': 'ከመውጣትህ በፊት',
+    'after work': 'ከስራ በኋላ',
+    'on your way home': 'ወደ ቤት በመንገድህ ላይ',
+    'if you can': 'ከቻልክ',
+    'as soon as possible': 'በተቻለ ፍጥነት',
+    'this evening': 'ዛሬ ማታ',
+    'tomorrow morning': 'ነገ ጠዋት',
+    'when you get a chance': 'እድል ሲኖርህ',
+    'before noon': 'ከቀትር በፊት'
+  };
+
+  const useLabels = [
+    'Daily requests',
+    'Home coordination',
+    'Work coordination',
+    'Errands and tasks',
+    'Travel and timing'
+  ];
+
+  const results = [];
+  let idx = 0;
+  for (const action of actions) {
+    for (const time of timePhrases) {
+      let en;
+      let am;
+      const actionAm = actionsAm[action] || action;
+      const timeAm = timePhrasesAm[time] || time;
+      const style = idx % 4;
+      if (style === 0) {
+        en = `Could you ${action} ${time}?`;
+        am = `እባክህ ${actionAm} ${timeAm}?`;
+      } else if (style === 1) {
+        en = `Can you ${action} ${time}?`;
+        am = `${actionAm} ${timeAm} ትችላለህ?`;
+      } else if (style === 2) {
+        en = `Please ${action} ${time}.`;
+        am = `እባክህ ${actionAm} ${timeAm}።`;
+      } else {
+        en = `Don't forget to ${action} ${time}.`;
+        am = `${actionAm} ${timeAm} እንዳትረሳ።`;
+      }
+      results.push({
+        en,
+        use: useLabels[idx % useLabels.length],
+        am
+      });
+      idx++;
+    }
+  }
+
+  return results.slice(0, 500);
+})();
+
+SENTENCES.everyday.push(...EVERYDAY_EXTRA_SENTENCES);
 
 // ─────────────────────────────────────────────
 // 6. WRITING PROMPTS (30 prompts)
